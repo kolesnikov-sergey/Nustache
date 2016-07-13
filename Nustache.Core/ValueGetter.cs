@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Data;
 using System.Reflection;
 using System.Xml;
 
@@ -63,7 +61,8 @@ namespace Nustache.Core
 
         private bool HasChildNodeList()
         {
-            _childNodeList = _target.SelectNodes(_name);
+            //_childNodeList = _target.SelectNodes(_name);
+            _childNodeList = _target.ChildNodes;
             return _childNodeList != null && _childNodeList.Count > 0;
         }
 
@@ -154,7 +153,7 @@ namespace Nustache.Core
         }
     }
 
-    internal class PropertyDescriptorValueGetter : ValueGetter
+   /* internal class PropertyDescriptorValueGetter : ValueGetter
     {
         private readonly object _target;
         private readonly PropertyDescriptor _propertyDescriptor;
@@ -167,10 +166,11 @@ namespace Nustache.Core
 
         public override object GetValue()
         {
-            var value = _propertyDescriptor.GetValue(_target);
+            //var value = _propertyDescriptor.GetValue(_target);
+            var value = _target;
             return JValueIdentifier.IsJValue(value) ? JValueIdentifier.GetValue(value) : value;
         }
-    }
+    }*/
 
     public class MethodInfoValueGetter : ValueGetter
     {
@@ -277,7 +277,7 @@ namespace Nustache.Core
         }
     }
 
-    internal class DataRowValueGetter : ValueGetter
+    /*internal class DataRowValueGetter : ValueGetter
     {
         private readonly DataRow _target;
         private readonly string _name;
@@ -297,7 +297,7 @@ namespace Nustache.Core
 
             return null;
         }
-    }
+    }*/
 
     internal class NameValueCollectionValueGetter : ValueGetter
     {

@@ -1,4 +1,6 @@
 using System;
+using System.Reflection;
+
 namespace Nustache.Core
 {
     public abstract class Part

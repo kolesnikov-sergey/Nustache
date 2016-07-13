@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Xml;
@@ -205,13 +204,13 @@ namespace Nustache.Core
                     yield return item;
                 }
             }
-            else if (value is DataTable)
+            /*else if (value is DataTable)
             {
                 foreach (var item in ((DataTable)value).Rows)
                 {
                     yield return item;
                 }
-            }
+            }*/
             else
             {
                 yield return value;
@@ -245,10 +244,10 @@ namespace Nustache.Core
                 return ((IEnumerable)value).GetEnumerator().MoveNext();
             }
 
-            if (value is DataTable)
+            /*if (value is DataTable)
             {
                 return ((DataTable)value).Rows.Count > 0;
-            }
+            }*/
 
             return true;
         }

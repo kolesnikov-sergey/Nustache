@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ReflectionBridge.Extensions;
+using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace Nustache.Core
@@ -24,16 +26,15 @@ namespace Nustache.Core
 
 		private static bool ImplementsGenericIDictionary(Type type)
 		{
-			return (type.FindInterfaces(IsGenericIDictionary, null).Length > 0);
+            return false;
+			//return (type.FindInterfaces(IsGenericIDictionary, null).Length > 0);
 		}
 
 		private static bool IsGenericIDictionary(Type type, object searchCrit)
 		{
 			return (type.Name == OpenIDictionaryType.Name)
-						&& type.IsGenericType
+						&& type.IsGenericType()
 						&& type.GetGenericTypeDefinition() == OpenIDictionaryType;
 		}
 	}
-
-
 }

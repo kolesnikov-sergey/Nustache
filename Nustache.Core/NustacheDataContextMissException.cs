@@ -2,7 +2,7 @@
 
 namespace Nustache.Core
 {
-    [Serializable]
+    //[Serializable]
     public class NustacheDataContextMissException : NustacheException
     {
         public NustacheDataContextMissException(string message)
