@@ -1,5 +1,4 @@
-﻿using ReflectionBridge.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
@@ -33,7 +32,7 @@ namespace Nustache.Core
 		private static bool IsGenericIDictionary(Type type, object searchCrit)
 		{
 			return (type.Name == OpenIDictionaryType.Name)
-						&& type.IsGenericType()
+						&& type.GetTypeInfo().IsGenericType
 						&& type.GetGenericTypeDefinition() == OpenIDictionaryType;
 		}
 	}

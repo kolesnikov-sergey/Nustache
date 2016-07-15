@@ -9,7 +9,7 @@
       "type": "platform",
       "version": "1.0.0"
     },
-    "Nustache.Core": "1.0.0-alfa1"
+    "Nustache.Core": "1.0.0-alfa2"
   },
 
   "frameworks": {
